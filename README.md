@@ -60,4 +60,10 @@ docker run -d --name movimiento-ms -p 8082:8082 banco/movimiento-ms
 # Ejecutar todas las pruebas (Unitaria y de Integración)
 mvn test
 
+Ejecutar pruebas de aceptación con Karate
+1. Ir al directorio de Karate (puede estar dentro de cliente-ms/karate):
+cd cliente-ms/karate
 
+2. Ejecutar las pruebas:
+gradlew test --info
+Todas las pruebas de aceptación están definidas en classpath:karate/features/cliente/cliente-crud.feature. Se validan los flujos de crear, actualizar, obtener y eliminar clientes.
