@@ -32,10 +32,9 @@ cd ../movimiento-ms
 mvn clean package -DskipTests
 
 2. ejecutar los microservicios.
-# Terminal 1
+   
 java -jar cliente-ms/target/cliente-ms-0.0.1-SNAPSHOT.jar
 
-# Terminal 2
 java -jar movimiento-ms/target/movimiento-ms-0.0.1-SNAPSHOT.jar
 
 
@@ -46,20 +45,16 @@ Este método compila el código dentro de la imagen de Docker y luego lo ejecuta
 
 Ejecute los siguientes comandos desde el directorio raíz de cada microservicio (donde se encuentran los Dockerfile):
 
-# 1. Construir Cliente-MS (Puerto 8081)
 docker build -t banco/cliente-ms .
 
-# 2. Construir Movimiento-MS (Puerto 8082)
 docker build -t banco/movimiento-ms .
 
 2. Ejecución de los Contenedores
 
 Ejecute los contenedores y asegúrese de mapear los puertos:
 
-# 1. Ejecutar Cliente-MS
 docker run -d --name cliente-ms -p 8081:8081 banco/cliente-ms
 
-# 2. Ejecutar Movimiento-MS
 docker run -d --name movimiento-ms -p 8082:8082 banco/movimiento-ms
 
 # Ejecutar todas las pruebas (Unitaria y de Integración)
