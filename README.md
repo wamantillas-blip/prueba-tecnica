@@ -23,14 +23,21 @@ Levantamiento del Proyecto
 
 Opción 1: Ejecución Directa con Maven
 1. Compilación del Proyecto
-Ejecute este comando desde el directorio raíz de cada microservicio (cliente-ms y movimiento-ms) para compilar el JAR y descargar las dependencias.
-mvn clean install -DskipTests
 
-2. Ejecución de los Microservicios
-# -- Cliente-MS (Terminal 1)
+Ejecute este comando desde el directorio raíz de cada microservicio (cliente-ms y movimiento-ms) para compilar el JAR y descargar las dependencias.
+cd cliente-ms
+mvn clean package -DskipTests
+
+cd ../movimiento-ms
+mvn clean package -DskipTests
+
+2. ejecutar los microservicios.
+# Terminal 1
 java -jar cliente-ms/target/cliente-ms-0.0.1-SNAPSHOT.jar
-# -- Movimiento-MS (Terminal 2)
+
+# Terminal 2
 java -jar movimiento-ms/target/movimiento-ms-0.0.1-SNAPSHOT.jar
+
 
 Opción 2: Compilación y Ejecución con Docker
 
