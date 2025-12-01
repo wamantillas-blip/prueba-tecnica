@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: movimiento-ms
+
+  r2dbc:
+    url: r2dbc:h2:mem:///movimientodb?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE; # DB separada
+    username: sa
+    password:
+
+
+  sql:
+    init:
+      platform: h2
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
